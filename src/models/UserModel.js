@@ -2,13 +2,8 @@
   'use strict';
 
   app.UserModel = class UserModel extends app.Abstract.Model {
-    constructor(name = '', surname = '', email = '') {
+    constructor() {
       super();
-      this.set('name', name);
-      this.set('surname', surname);
-      this.set('email', email);
-
-      return this;
     }
 
     getName() {
@@ -40,6 +35,18 @@
 
     static isValidUserName(name) {
       return name.length;
+    }
+
+    static fromJSON(options) {
+      const {name, surname, email, token} = options;
+      const userModel = new app.UserModel();
+
+      this.set('name', name);
+      this.set('surname', surname);
+      this.set('email', email);
+      this.set('token', token);
+
+      return userModel;
     }
   };
 

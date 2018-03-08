@@ -14,6 +14,7 @@
 
     fireEvent(eventName, data) {
       if (Array.isArray(this.events[eventName])) {
+        // Copy events to prevent detaching callbacks by themself
         const events = this.events[eventName].concat([]);
         events.forEach(evt => evt(data));
       }

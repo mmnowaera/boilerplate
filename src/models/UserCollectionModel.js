@@ -21,22 +21,15 @@
       });
       this.get('collection').push(item);
       this.fireEvent('change');
-
-      return this;
     }
     removeItem(item) {
       if (!item) {
         return;
       }
-
       const index = this.get('collection').indexOf(item);
       this.get('collection').splice(index, 1);
       this.fireEvent('change');
     }
-    cleanItems() {
-      this.set('collection', []);
-    }
-
   };
 
 })();

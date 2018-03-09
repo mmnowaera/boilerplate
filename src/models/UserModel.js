@@ -48,6 +48,9 @@
 
       return userModel;
     }
+    toJSON() {
+      return this.properties;
+    }
   };
 
 })();

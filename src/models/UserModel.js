@@ -41,10 +41,10 @@
       const {name, surname, email, token} = options;
       const userModel = new app.UserModel();
 
-      this.set('name', name);
-      this.set('surname', surname);
-      this.set('email', email);
-      this.set('token', token);
+      userModel.set('name', name);
+      userModel.set('surname', surname);
+      userModel.set('email', email);
+      userModel.set('token', token);
 
       return userModel;
     }

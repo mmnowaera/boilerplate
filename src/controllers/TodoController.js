@@ -15,7 +15,7 @@
                         console.error(err);
                     });
             } else {
-                console.error('dupa pa');
+                console.error('client: nie dziala dodawanie');
             }
         }
         removeItem(id) {
@@ -26,6 +26,19 @@
                 .catch(err => {
                     console.error(err);
                 });
+        }
+        toggleItemStatus(id) {
+            const itemModel = this.model.findItemById(id);
+            if (itemModel) {
+                const status = (itemModel.get('status') === 'done') ? 'unresolved' : 'done';
+                app.repositories.http.updateItemById({name: itemModel.get('name'), id, status})
+                    .then(() => {
+                        itemModel.toggleStatus();
+                })
+                .catch(err => {
+                    console.error(err);
+                });
+            }
         }
     };
   })();

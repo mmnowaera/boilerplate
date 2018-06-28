@@ -10,6 +10,16 @@
         this.fireEvent('remove');
       }
 
+      toggleStatus() {
+        const status = this.get('status');
+        if (status === 'done') {
+            this.set('status', 'unresolved');
+        } else {
+            this.set('status', 'done');
+        }
+        this.fireEvent('change');
+      }
+
       static fromJSON(options) {
         const {name, status, id} = options;
         const todoItemModel = new app.TodoItemModel();

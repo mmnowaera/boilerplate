@@ -31,6 +31,7 @@
             return new Promise((resolve, reject) => {
                 const request = new XMLHttpRequest();
                 request.open('DELETE', `${this.url }tasks/${id}`, true);
+                request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
                 request.onload = function () {
                 if (request.status >= 200 && request.status < 400) {
                     // Success!
@@ -46,6 +47,28 @@
                     reject({msg: 'client: nie dziala usuwanie'});
                 };
                 request.send();
+            });
+        }
+        updateItemById(item) {
+            return new Promise((resolve, reject) => {
+                const request = new XMLHttpRequest();
+                request.open('PUT', `${this.url }tasks/${item.id}`, true);
+                request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+                request.onload = function () {
+                if (request.status >= 200 && request.status < 400) {
+                    // Success!
+                    const resp = request.responseText;
+                    resolve(resp);
+                } else {
+                    // We reached our target server, but it returned an error
+                    reject({msg: 'server: nie dziala usuwanie'});
+                }
+                };
+                request.onerror = function () {
+                    // There was a connection error of some sort
+                    reject({msg: 'client: nie dziala usuwanie'});
+                };
+                request.send(JSON.stringify(item));
             });
         }
         load() {

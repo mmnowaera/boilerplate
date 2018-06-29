@@ -12,13 +12,13 @@
     },
     {
       "name": "dfgdfg",
-      "status": "unresolved",
-      "id": 30
+      "id": 30,
+      "status": "done"
     },
     {
       "name": "dfgdfg",
-      "status": "unresolved",
-      "id": 31
+      "id": 31,
+      "status": "done"
     },
     {
       "name": "terwerwe",
@@ -53,27 +53,17 @@
     {
       "name": "qqewq",
       "id": 38,
-      "status": "done"
+      "status": "unresolved"
     },
     {
       "name": "123",
       "id": 39,
-      "status": "done"
+      "status": "unresolved"
     },
     {
       "name": "123",
       "id": 40,
-      "status": "done"
-    },
-    {
-      "name": "1234",
-      "id": 41,
-      "status": "done"
-    },
-    {
-      "name": "123123",
-      "status": "unresolved",
-      "id": 42
+      "status": "unresolved"
     }
   ]
 }

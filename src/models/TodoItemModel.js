@@ -6,10 +6,6 @@
         super();
       }
 
-      remove() {
-        this.fireEvent('remove');
-      }
-
       toggleStatus() {
         const status = this.get('status');
         if (status === 'done') {
@@ -26,7 +22,7 @@
 
         todoItemModel.set('name', name);
         todoItemModel.set('status', status);
-        todoItemModel.set('id', id);
+        todoItemModel.set('id', parseInt(id));
 
         return todoItemModel;
       }

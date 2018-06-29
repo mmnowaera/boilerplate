@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    app.AbstractTodoController = class AbstractTodoController extends app.Abstract.Controller {
+    app.TodoController = class TodoController extends app.Abstract.Controller {
         constructor(model) {
             super(model);
         }
@@ -43,7 +43,7 @@
         }
     };
 
-    app.TodoController = class TodoController extends app.AbstractTodoController {
+    app.TodoAlternativeController = class TodoAlternativeController extends app.TodoController {
         constructor(model) {
             super(model);
             this.i = 0;

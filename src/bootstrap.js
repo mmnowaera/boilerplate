@@ -4,7 +4,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     const model = new app.TodoCollectionModel();
-    const controller = new app.AbstractTodoController(model);
+    const controller = new app.TodoController(model);
     const view = new app.TodoView(model, controller);
 
     controller.setView(view);

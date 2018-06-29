@@ -15,7 +15,7 @@
         const todoListView = new app.TodoListView(this.model, this.controller);
 
         const alternativeModel = new app.TodoCollectionModel();
-        const alternativeController = new app.TodoAlternativeController(alternativeModel);
+        const alternativeController = new app.TodoController(alternativeModel);
 
         const todoInputView2 = new app.TodoInputView(alternativeModel, alternativeController);
         const todoListView2 = new app.TodoListView(alternativeModel, alternativeController);

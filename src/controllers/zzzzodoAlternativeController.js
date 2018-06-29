@@ -43,7 +43,7 @@
         }
     };
 
-    app.TodoAlternativeController = class TodoAlternativeController extends app.AbstractTodoController {
+    app.TodoController = class TodoController extends app.AbstractTodoController {
         constructor(model) {
             super(model);
             this.i = 0;

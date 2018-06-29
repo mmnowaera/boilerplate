@@ -5,7 +5,7 @@
         super(model, controller);
         this.setRootEl(document.createElement('li'));
         model.addEventListener('remove', () => {
-            this.rootEl.parentNode.removeChild(this.rootEl);
+            this.rootEl.remove();
         });
         model.addEventListener('change', () => {
             this.render();
